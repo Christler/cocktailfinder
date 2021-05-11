@@ -2,17 +2,27 @@ const drinkDetail = document.getElementById("drink-detail"),
       drinkDetailImage = document.getElementById("drink-detail-img"),
       drinkDetailTitle = document.getElementById("drink-detail-title"),
       instructions = document.getElementById("instructions"),
-      ingredients = document.getElementById("ingredients");
+      ingredients = document.getElementById("ingredients"),
+      searchType = document.getElementById("search-type");
 
 //fetch to get api data
 function getDrinks(){
   closeDetail();
+  let url = "";
+
+  if(searchType.value === "drink-name"){
+    url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+  }
+
+  if(searchType.value === "ingredient"){
+    url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
+  }
 
   let drinksContainer = document.getElementById("dinksContainer");
   drinksContainer.innerHTML = "";
   let search = document.getElementById('searchInput').value;
 
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + search, {mode: 'cors'})
+  fetch(url + search, {mode: 'cors'})
     .then(function(response) {return response.json()})
     .then(function(data) {
       let drinksLength = data.drinks.length;
