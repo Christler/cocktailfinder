@@ -9,6 +9,10 @@ body{
     color: #fafafa;
 }
 
+.btn-search{
+    margin: 10px;
+}
+
 .navbar {
     background-color: #222222;
 }
@@ -56,6 +60,11 @@ body{
 
 .card {
     border: none;
+    width: 18rem;
+}
+
+.card-image {
+    width: 100%;
 }
 
 .card:hover {
@@ -68,10 +77,6 @@ body{
 
 #instructions {
     padding-left: 20px;
-}
-
-#drinkImage{
-    width: 160px;
 }
 
 footer {

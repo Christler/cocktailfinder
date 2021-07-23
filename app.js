@@ -31,8 +31,8 @@ function getDrinks(){
         drinksContainer.innerHTML += `
           <div class="col-sm">
             <a href="#search-section" class="text-decoration-none" onclick="getDrinkDetails(${data.drinks[i].idDrink})">
-            <div class="card bg-light mb-3 shadow p-3 mb-5 rounded" style="width: 18rem;">
-              <img class="card_img-top" src="${data.drinks[i].strDrinkThumb}">  
+            <div class="card bg-light mb-3 shadow p-3 mb-5 rounded">
+              <img class="card-image" src="${data.drinks[i].strDrinkThumb}">  
               <div class="card-body text-center">
                 <h5>${data.drinks[i].strDrink}</h5>
               </div>
